@@ -5,8 +5,9 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/chef/code-test/data"
-	"github.com/chef/code-test/types"
+	"code-test/data"
+	"code-test/types"
+
 	log "github.com/sirupsen/logrus"
 )
 

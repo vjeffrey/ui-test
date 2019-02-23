@@ -3,7 +3,7 @@ package data
 import (
 	"time"
 
-	types "github.com/chef/code-test/types"
+	types "code-test/types"
 )
 
 var EmptyNodes = types.NodesResponse{

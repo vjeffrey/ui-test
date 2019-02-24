@@ -12,7 +12,7 @@ import (
 )
 
 func main() {
-	serveAddress := "127.0.0.1:2133"
+	serveAddress := "0.0.0.0:2133"
 
 	ctx := context.Background()
 	ctx, cancel := context.WithCancel(ctx)

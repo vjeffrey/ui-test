@@ -23,13 +23,13 @@ We've included a small golang binary that will serve up some static data for the
 
 
 ### run it with docker:
+`make build`
+`make run`
 
-TODO
-
-### run the go binary directly:
+### alternative: run the go binary directly:
 * install golang (https://golang.org/doc/install)
-* clone the repo to your local /go/src dir
-* cd to /go/src/code-test
+* clone the repo to your local ~/go/src dir
+* cd to ~/go/src/code-test
 * `go run main.go`
 
 < Note: if you have trouble getting the golang app up and running, please contact us right away so we can unblock you >
@@ -37,9 +37,9 @@ TODO
 
 ## sample api calls
 ```
-curl http://127.0.0.1:2133/nodes -d '{}'
-curl http://127.0.0.1:2133/nodes -d '{"filters": [ { "key": "last_scan_status", "value": "failed" } ] }'
-curl http://127.0.0.1:2133/nodes -d '{"filters": [ { "key": "name", "value": "my test node" } ] }'
+curl 0.0.0.0:2133/nodes -d '{}'
+curl 0.0.0.0:2133/nodes -d '{"filters": [ { "key": "last_scan_status", "value": "failed" } ] }'
+curl 0.0.0.0:2133/nodes -d '{"filters": [ { "key": "name", "value": "my test node" } ] }'
 ```
 
 

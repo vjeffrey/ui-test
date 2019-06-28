@@ -31,8 +31,8 @@ func main() {
 }
 
 func nodesHandler(w http.ResponseWriter, r *http.Request) {
-    	w.Header().Set("Access-Control-Allow-Origin", "*")
-    	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 	decoder := json.NewDecoder(r.Body)
 	var t types.NodesRequest
 	err := decoder.Decode(&t)
@@ -48,6 +48,10 @@ func handleFilters(request types.NodesRequest) types.NodesResponse {
 	log.Infof("received filters request: %v", request.Filters)
 	nodesData := make([]types.Node, 0)
 	unfilteredNodesData := data.SampleUnfilteredNodes
+	if len(request.Filters) == 0 {
+		log.Infof("no filters included in query. sending back all nodes")
+		return unfilteredNodesData
+	}
 	for _, filter := range request.Filters {
 		nodesData = append(nodesData, returnMatchingItems(unfilteredNodesData.Nodes, filter)...)
 	}
